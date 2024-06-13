@@ -6,7 +6,6 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root"></div>
     <script>
       const xhr = new XMLHttpRequest();
       console.dir(xhr);
@@ -28,6 +27,15 @@
           console.dir(result);
           console.log(result.response.body.items);
           console.log(result.response.body.items[0].hsptlNm);
+
+          const root = document.getElementById('root');
+
+          let lists = [];
+
+          result.response.body.items.forEach((item) => {
+            lists.push(`<li>${item.hsptlNm}</li>)`);
+          });
+          console.log(lists.join(''));
         }
       });
     </script>
