@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="root"></div>
     <script>
       const xhr = new XMLHttpRequest();
       console.dir(xhr);
@@ -36,6 +37,8 @@
             lists.push(`<li>${item.hsptlNm}</li>)`);
           });
           console.log(lists.join(''));
+
+          root.innerHTML = `<ul>${lists.join('')}</ul>`;
         }
       });
     </script>
